@@ -1,0 +1,43 @@
+.title {
+  background-color: #395144;
+  padding: 20px;
+  text-align: center;
+  color: #F0EBCE;
+}
+
+.container {
+  margin: 1% 20%;
+  padding: 10px 20px;
+}
+
+/*.card {
+  margin-top: 10px;
+}*/
+
+.mat-mdc-card {
+  background-color: #f0ebce;
+  padding: 2%;
+}
+
+mat-form-field {
+  width: 100%;
+  margin: 5px;
+}
+
+.mat-mdc-card-title,
+.mat-mdc-card-subtitle {
+  margin-left: 8px;
+}
+
+.mat-mdc-raised-button.mat-primary {
+  background-color: #395144;
+  margin-left: 10px;
+}
+
+.mat-grid-tile {
+  padding: 20px 0;
+}
+
+/*.btn-accept {
+  margin-right: 5px;
+}*/

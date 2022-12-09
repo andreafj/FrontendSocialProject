@@ -1,0 +1,19 @@
+.title {
+  background-color: #395144;
+  padding: 20px;
+  text-align: center;
+  color: #F0EBCE;
+}
+
+.container {
+  margin: 1% 10%;
+}
+
+.card {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.mat-mdc-card {
+  background-color: #F0EBCE;
+}

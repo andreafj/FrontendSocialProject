@@ -1,0 +1,37 @@
+.title {
+  background-color: #395144;
+  padding: 20px;
+  text-align: center;
+  color: #F0EBCE;
+}
+
+table {
+  background-color: #F0EBCE;
+  opacity: 80%;
+  width: 100%;
+}
+
+.container {
+  margin: 1% 10%;
+}
+
+.mat-mdc-raised-button.mat-primary {
+  --mdc-protected-button-container-color: #395144;
+  font-size: 11px;
+  line-height: 20px;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 15%;
+}
+
+.delete-icon {
+  color: #E15639;
+  cursor: pointer;
+}
