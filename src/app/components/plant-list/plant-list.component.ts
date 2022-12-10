@@ -4,15 +4,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Plant } from 'src/app/interfaces/plant';
-
-const Plant_List: Plant[] = [
-  { name: "Cactus", genus: "cactus", scientificName: "des", commonName: "sunflower", description: "it is beatiful", category: 1 },
-  { name: "Margarita", genus: "mar", scientificName: "des", commonName: "sunflower", description: "it is amazing", category: 3 },
-  { name: "Suculenta", genus: "scue", scientificName: "des", commonName: "sunflower", description: "it is beatiful", category: 5 },
-  { name: "Rosas", genus: "scueswe", scientificName: "des", commonName: "sunflower", description: "it is amazing", category: 4 },
-  { name: "Andino", genus: "scuee", scientificName: "des", commonName: "sunflower", description: "it is beatiful", category: 2 },
-  { name: "Cactus floras", genus: "secue", scientificName: "des", commonName: "sunflower", description: "it is amazing", category: 5 },
-];
+import { PlantService } from 'src/app/services/plant.service';
 
 @Component({
   selector: 'app-plant-list',
@@ -21,13 +13,18 @@ const Plant_List: Plant[] = [
 })
 export class PlantListComponent implements AfterViewInit {
   displayedColumns: string[] = ['name', 'genus', 'scientificName', 'commonName', 'description', 'category', 'actions'];
-  dataSource = new MatTableDataSource<Plant>(Plant_List);
+  dataSource = new MatTableDataSource<Plant>();
   loading: boolean = false;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private _snackBar: MatSnackBar) { }
+  constructor(private _snackBar: MatSnackBar, private _plantService: PlantService) { }
+
+  ngOnInit(): void {
+    this.getPlants();
+
+  }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -41,6 +38,15 @@ export class PlantListComponent implements AfterViewInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  getPlants() {
+    this.loading = true;
+    this._plantService.getPlants().subscribe(data => {
+      this.loading = false;
+      this.dataSource.data = data;
+      console.log(data);
+    })
   }
 
   deletePlant() {

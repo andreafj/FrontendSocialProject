@@ -7,47 +7,47 @@
     <mat-card-subtitle>
       Plant data
     </mat-card-subtitle>
-    <form>
+    <form [formGroup]="formPlant" (ngSubmit)="addPlant()">
       <mat-grid-list cols="2" rowHeight="80px">
         <mat-grid-tile>
           <mat-form-field appearance="outline">
             <mat-label>Name</mat-label>
-            <input matInput placeholder="Name plant">
+            <input formControlName="name" matInput placeholder="Name plant">
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field appearance="outline">
             <mat-label>Genus</mat-label>
-            <input matInput placeholder="Genus plant">
+            <input formControlName="genus" matInput placeholder="Genus plant">
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field appearance="outline">
             <mat-label>Scientific Name</mat-label>
-            <input matInput placeholder="Scientific Name plant">
+            <input formControlName="scientificName" matInput placeholder="Scientific Name plant">
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field appearance="outline">
             <mat-label>Common Name</mat-label>
-            <input matInput placeholder="Common Name plant">
+            <input formControlName="commonName" matInput placeholder="Common Name plant">
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field appearance="outline">
             <mat-label>Description</mat-label>
-            <input matInput placeholder="Description plant">
+            <input formControlName="description" matInput placeholder="Description plant">
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field appearance="outline">
             <mat-label>Category</mat-label>
-            <input matInput placeholder="Category plant">
+            <input formControlName="category" matInput placeholder="Category plant">
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile [colspan]="2">
           <button routerLink="/plantList" mat-raised-button>Return</button>
-          <button mat-raised-button color="primary">Accept</button>
+          <button [disabled]="formPlant.invalid" type="submit" mat-raised-button color="primary">Accept</button>
         </mat-grid-tile>
       </mat-grid-list>
     </form>
