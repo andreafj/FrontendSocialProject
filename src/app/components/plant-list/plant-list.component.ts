@@ -6,7 +6,12 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Plant } from 'src/app/interfaces/plant';
 
 const Plant_List: Plant[] = [
-  { name: "plantita", genus: "scue", scientificName: "des", commonName: "sunflower", description: "it is beatiful", category: 5 }
+  { name: "Cactus", genus: "cactus", scientificName: "des", commonName: "sunflower", description: "it is beatiful", category: 1 },
+  { name: "Margarita", genus: "mar", scientificName: "des", commonName: "sunflower", description: "it is amazing", category: 3 },
+  { name: "Suculenta", genus: "scue", scientificName: "des", commonName: "sunflower", description: "it is beatiful", category: 5 },
+  { name: "Rosas", genus: "scueswe", scientificName: "des", commonName: "sunflower", description: "it is amazing", category: 4 },
+  { name: "Andino", genus: "scuee", scientificName: "des", commonName: "sunflower", description: "it is beatiful", category: 2 },
+  { name: "Cactus floras", genus: "secue", scientificName: "des", commonName: "sunflower", description: "it is amazing", category: 5 },
 ];
 
 @Component({
