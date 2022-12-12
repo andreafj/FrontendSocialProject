@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Plant } from 'src/app/interfaces/plant';
+import { PlantService } from 'src/app/services/plant.service';
 
 @Component({
   selector: 'app-add-edit-plant',
@@ -9,29 +11,50 @@ import { Plant } from 'src/app/interfaces/plant';
 })
 export class AddEditPlantComponent implements OnInit {
   loading: boolean = false;
-  formPlant: FormGroup
+  formPlant: FormGroup;
+  id: number;
+  formType: string = 'Add plant'
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+    private _plantService: PlantService,
+    private router: Router,
+    private infoRoute: ActivatedRoute) {
     this.formPlant = this.fb.group({
       name: ['', Validators.required],
       genus: ['', Validators.required],
       scientificName: ['', Validators.required],
       commonName: ['', Validators.required],
       description: ['', Validators.required],
-      category: ['', Validators.required],
+      categoryId: ['', Validators.required],
     })
+
+    this.id = Number(this.infoRoute.snapshot.paramMap.get('id'));
   }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-
+    if (this.id != 0) {
+      this.formType = 'Edit Plant';
+      this.getPlant(this.id);
+    }
   }
 
-  addPlant() {
-    console.log("agregar mascota")
-    const name = this.formPlant.value.name;
+  getPlant(id: number) {
+    this._plantService.getPlant(id).subscribe(data => {
+      this.formPlant.setValue({
+        name: data.name,
+        genus: data.genus,
+        scientificName: data.scientificName,
+        commonName: data.commonName,
+        description: data.description,
+        categoryId: data.categoryId,
+      })
+    })
+  }
 
+  addEditPlant() {
+    console.log("add edit plant")
     //Armamos el objeto
 
     const plant: Plant = {
@@ -40,9 +63,29 @@ export class AddEditPlantComponent implements OnInit {
       scientificName: this.formPlant.value.scientificName,
       commonName: this.formPlant.value.commonName,
       description: this.formPlant.value.description,
-      category: this.formPlant.value.category
+      categoryId: this.formPlant.value.categoryId
     }
-    console.log(plant)
+
+    if (this.id != 0) {
+      plant.id = this.id;
+      this.editPlant(this.id, plant);
+    } else {
+      this.addPlant(plant);
+    }
+  }
+
+  editPlant(id: number, plant: Plant) {
+    this._plantService.updatePlant(id, plant).subscribe(() => {
+      this.router.navigate(['/app-plant-list']);
+    })
+  }
+
+  addPlant(plant: Plant) {
+    //Send objet to Backend
+    this._plantService.addPlant(plant).subscribe(data => {
+      console.log(data);
+      this.router.navigate(['/app-plant-list']);
+    })
   }
 
 }

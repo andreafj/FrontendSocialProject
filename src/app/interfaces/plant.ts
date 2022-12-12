@@ -5,5 +5,5 @@ export interface Plant {
   scientificName: string;
   commonName: string;
   description: string;
-  category: number
+  categoryId: number
 }

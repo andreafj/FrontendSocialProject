@@ -15,4 +15,20 @@ export class PlantService {
   getPlants(): Observable<Plant[]> {
     return this.http.get<Plant[]>(`${this.myAppUrl}${this.myApiUrl}`);
   }
+
+  getPlant(id: number): Observable<Plant> {
+    return this.http.get<Plant>(`${this.myAppUrl}${this.myApiUrl}${id}`)
+  }
+
+  deletePlant(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.myAppUrl}${this.myApiUrl}${id}`)
+  }
+
+  addPlant(plant: Plant): Observable<Plant> {
+    return this.http.post<Plant>(`${this.myAppUrl}${this.myApiUrl}`, plant)
+  }
+
+  updatePlant(id: number, plant: Plant): Observable<void> {
+    return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}${id}`, plant)
+  }
 }

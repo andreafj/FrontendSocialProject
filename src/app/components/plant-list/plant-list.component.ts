@@ -49,17 +49,17 @@ export class PlantListComponent implements AfterViewInit {
     })
   }
 
-  deletePlant() {
+  deletePlant(id: number) {
     this.loading = true;
-    setTimeout(() => {
+    this._plantService.deletePlant(id).subscribe(() => {
+      this.messageSucess();
       this.loading = false;
-      this._snackBar.open("La planta se elimino con exito", '', {
-        duration: 4000,
-        horizontalPosition: 'right'
-      });
-    }, 3000);
+      this.getPlants();
+    });
+  }
 
-    this._snackBar.open('Plant eliminated succefull', '', {
+  messageSucess() {
+    this._snackBar.open('The plant was successfully removed', '', {
       duration: 4000,
       horizontalPosition: 'right'
     });

@@ -1,5 +1,5 @@
 <div class="title">
-  <h1>Add Plant</h1>
+  <h1>{{formType}}</h1>
 </div>
 <app-spinner *ngIf="loading"></app-spinner>
 <div class="container">
@@ -7,7 +7,7 @@
     <mat-card-subtitle>
       Plant data
     </mat-card-subtitle>
-    <form [formGroup]="formPlant" (ngSubmit)="addPlant()">
+    <form [formGroup]="formPlant" (ngSubmit)="addEditPlant()">
       <mat-grid-list cols="2" rowHeight="80px">
         <mat-grid-tile>
           <mat-form-field appearance="outline">
@@ -42,7 +42,7 @@
         <mat-grid-tile>
           <mat-form-field appearance="outline">
             <mat-label>Category</mat-label>
-            <input formControlName="category" matInput placeholder="Category plant">
+            <input formControlName="categoryId" matInput placeholder="Category plant">
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile [colspan]="2">
