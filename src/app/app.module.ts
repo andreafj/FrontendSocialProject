@@ -8,13 +8,17 @@ import { PlantListComponent } from './components/plant-list/plant-list.component
 import { ShowPlantComponent } from './components/show-plant/show-plant.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+import { HomeComponent } from './admin/home/home.component';
+import { SidebarComponent } from './admin/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddEditPlantComponent,
     PlantListComponent,
-    ShowPlantComponent
+    ShowPlantComponent,
+    HomeComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
