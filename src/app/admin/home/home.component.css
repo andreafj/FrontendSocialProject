@@ -9,9 +9,9 @@ mat-sidenav-content {
   /*background-color: #F0EBCE;*/
 }
 
-mat-sidenav-content .main {
+/*mat-sidenav-content .main {
   margin-left: 30px;
-}
+}*/
 
 mat-toolbar {
   justify-content: space-between;

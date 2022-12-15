@@ -7,12 +7,12 @@
 
 table {
   background-color: #F0EBCE;
-  opacity: 80%;
+  /*opacity: 80%;*/
   width: 100%;
 }
 
 .container {
-  margin: 1% 10%;
+  margin: 1% 5%;
 }
 
 .mat-mdc-raised-button.mat-primary {
@@ -31,7 +31,7 @@ th {
   width: 15%;
 }
 
-.delete-icon {
-  color: #E15639;
+.icon-list {
+  color: #4E6C50;
   cursor: pointer;
 }

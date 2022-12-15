@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './admin/home/home.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SidebarComponent } from './admin/sidebar/sidebar.component';
     PlantListComponent,
     ShowPlantComponent,
     HomeComponent,
-    SidebarComponent
+    SidebarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

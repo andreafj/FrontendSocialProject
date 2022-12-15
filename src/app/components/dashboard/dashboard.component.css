@@ -1,0 +1,49 @@
+#banner-plant {
+  background-image: url('../../../assets/imagen-dashboard/imagen1.jpg');
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+#banner-plant .section {
+  color: #F0EBCE;
+  padding: 10% 50% 33% 5%;
+}
+
+#plant-block-one {
+  display: flex;
+  margin: 5% 5%;
+}
+
+#plant-block-one .detail {
+  margin: 10% 10%;
+  color: violet;
+}
+
+#plant-block-one .detail h2 {
+  color: #395144;
+}
+
+#plant-block-one .detail p {
+  color: #4E6C50;
+}
+
+/*#plant-block-two {
+  display: flex;
+}*/
+
+#plant-block-two .container-fluid .row {
+  display: flex;
+  align-items: center;
+  background: #d0dfcf;
+  padding: 0px;
+  margin: 0;
+}
+
+#plant-block-two .container-fluid .row .right-side img {
+  /*display: block;*/
+  width: 100%;
+}
+
+#plant-block-two .container-fluid .row .left-side {
+  margin: 3% 4%;
+}

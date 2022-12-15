@@ -76,7 +76,7 @@ export class AddEditPlantComponent implements OnInit {
 
   editPlant(id: number, plant: Plant) {
     this._plantService.updatePlant(id, plant).subscribe(() => {
-      this.router.navigate(['/app-plant-list']);
+      this.router.navigate(['/plantList']);
     })
   }
 
@@ -84,7 +84,7 @@ export class AddEditPlantComponent implements OnInit {
     //Send objet to Backend
     this._plantService.addPlant(plant).subscribe(data => {
       console.log(data);
-      this.router.navigate(['/app-plant-list']);
+      this.router.navigate(['/plantList']);
     })
   }
 
