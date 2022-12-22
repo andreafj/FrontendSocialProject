@@ -1,0 +1,25 @@
+<div class="navbar">
+  <!--<div class="top">
+    <mat-icon></mat-icon>
+  </div>-->
+  <div class="user">
+    <img src="https://img.icons8.com/bubbles/500/admin-settings-male.png" alt="">
+    <h4 class="name">Admin</h4>
+    <p class="mail">admin@gmail.com</p>
+  </div>
+  <div class="menu">
+    <div class="menu-head">
+      <span>Dashboard</span>
+    </div>
+    <div class="menu-item">
+      <button mat-button class="menu-button" [routerLink]="['/dashboard']">
+        <mat-icon>dashboard</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-button class="menu-button" [routerLink]="['/plantList']">
+        <mat-icon>local_florist</mat-icon>
+        <span>Plants</span>
+      </button>
+    </div>
+  </div>
+</div>

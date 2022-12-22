@@ -52,10 +52,10 @@
         <button routerLink="/addPlant" class="add-button" mat-raised-button color="primary">Add Plant</button>
       </th>
       <td mat-cell *matCellDef="let element">
-        <mat-icon routerLink="/showPlant/{{element.id}}" matTooltip="Show" fontIcon="open_in_full  "></mat-icon>
-        <mat-icon routerLink="/editPlant/{{element.id}}" matTooltip="Edit" fontIcon="edit"></mat-icon>
-        <mat-icon (click)="deletePlant(element.id) " matTooltip="Delete" class="delete-icon"
-          fontIcon="delete"></mat-icon>
+        <mat-icon routerLink="/showPlant/{{element.id}}" matTooltip="Show" class="icon-list"
+          fontIcon="open_in_full  "></mat-icon>
+        <mat-icon routerLink="/editPlant/{{element.id}}" matTooltip="Edit" class="icon-list" fontIcon="edit"></mat-icon>
+        <mat-icon (click)="deletePlant(element.id) " matTooltip="Delete" class="icon-list" fontIcon="delete"></mat-icon>
       </td>
     </ng-container>
 

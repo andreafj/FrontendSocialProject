@@ -40,10 +40,18 @@
           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
-          <mat-form-field appearance="outline">
+
+          <!-- <mat-form-field appearance="outline">
             <mat-label>Category</mat-label>
             <input formControlName="categoryId" matInput placeholder="Category plant">
-          </mat-form-field>
+          </mat-form-field> -->
+
+          <select name="Category" id="Category-list" formControlName="categoryId">
+            <option *ngFor="let iCate of listCategory" ngValue="{{iCate.id}}">{{iCate.name}}</option>
+          </select>
+
+
+          
         </mat-grid-tile>
         <mat-grid-tile [colspan]="2">
           <button routerLink="/plantList" mat-raised-button>Return</button>
