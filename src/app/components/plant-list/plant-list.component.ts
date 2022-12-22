@@ -45,7 +45,7 @@ export class PlantListComponent implements AfterViewInit {
     this._plantService.getPlants().subscribe(data => {
       this.loading = false;
       this.dataSource.data = data;
-      console.log(data);
+      //console.log(data);
     })
   }
 
