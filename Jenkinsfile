@@ -21,7 +21,6 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/andreafj/FrontendSocialProject.git'
                 //sh 'npm install'
                 bat 'npm install'
-
                 dir('/src'){
                 // some block
                 }
