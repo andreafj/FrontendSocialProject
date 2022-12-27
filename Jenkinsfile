@@ -17,9 +17,8 @@ pipeline {
 
     stages {
         stage('install') { 
-            steps{
-                git 'git branch: 'main', url: 'https://github.com/andreafj/FrontendSocialProject.git'
-
+            steps {
+                git branch: 'main', url: 'https://github.com/andreafj/FrontendSocialProject.git'
                 //sh 'npm install'
                 bat 'npm intall'
 
