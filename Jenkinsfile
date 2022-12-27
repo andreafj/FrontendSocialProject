@@ -26,7 +26,7 @@ pipeline {
             steps
             {
 
-                git 'git branch: 'main', url: 'https://github.com/andreafj/FrontendSocialProject.git''
+                git 'git branch: 'main', url: 'https://github.com/andreafj/FrontendSocialProject.git'
 
                 //sh 'npm install'
                 bat 'npm intall'
