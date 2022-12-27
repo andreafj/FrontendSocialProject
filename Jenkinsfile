@@ -19,11 +19,13 @@ pipeline {
     }
 
     stages
-
     {
         stage('install')
         {
-            steps
+
+        }
+
+         steps
             {
 
                 git 'git branch: 'main', url: 'https://github.com/andreafj/FrontendSocialProject.git'
@@ -40,8 +42,6 @@ pipeline {
                 }
 
             }
-
-        }
 
     }
 
