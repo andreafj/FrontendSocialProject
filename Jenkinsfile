@@ -1,11 +1,8 @@
 pipeline {
-
     agent any
 
     tools {
-
     nodejs "nodeAngular"
-
     }
 
     parameters {
@@ -18,31 +15,20 @@ pipeline {
 
     }
 
-    stages
-    {
-        stage('install')
-        {
-
-        }
-
-         steps
-            {
-
+    stages {
+        stage('install') { 
+            steps{
                 git 'git branch: 'main', url: 'https://github.com/andreafj/FrontendSocialProject.git'
 
                 //sh 'npm install'
                 bat 'npm intall'
 
-                dir('/src')
-
-                {
-
+                dir('/src'){
                 // some block
-
                 }
 
             }
-
+        }
     }
 
 }
